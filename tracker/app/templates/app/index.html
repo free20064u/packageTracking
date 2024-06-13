@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<main class="container home-image" style="background-image:url({% static "app/images/image1.png" %})">
+    <div id="main-top">
+        <h2 class="home-title">INDUSTRY LEADING <br> LOGISTIC COMPANY</h2>
+        
+        <P class="home-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, iste.</P>
+        
+        <div>
+            <a href=""><button class="btn" id="btn1">Contact us</button></a>
+            <a href=""><button class="btn" id="btn2">Discover More</button></a>
+        </div>
+    </div>
+</main>
+{% endblock content %}

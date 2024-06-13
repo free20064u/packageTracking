@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Tracker</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "base/css/base.css" %}">
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="container">
+            <div id="navbar-title">
+                <img src="" alt="logo" id="logo">
+                <h3 id="title">LOGISTICS</h3>
+            </div>
+            <ul id="navbar-list">
+                <li class="list-item"><a href="" class="navbar-link">HOME</a></li>
+                <li class="list-item"><a href="" class="navbar-link">ABOUT</a></li>
+                <li class="list-item"><a href="" class="navbar-link">SERVICES</a></li>
+                <li class="list-item"><a href="" class="navbar-link">TRACK GOODS</a></li>
+                <li class="list-item"><a href="" class="navbar-link">CONTACT</a></li>
+                <li class="list-item"><a href="" class="navbar-link">BLOG</a></li>
+            </ul>
+        </nav>
+    </header>
+        {% block content %}{% endblock content %}
+    <footer >
+        <div id="footer-top" class="container">
+            <section id="footer-about">
+                <h3>ABOUT US</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam facilis! Voluptate sit sed, repellat repellendus illum tenetur ipsam laborum nostrum </p>
+            </section>
+            <section id="footer-links">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="http://">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">What we do</a></li>
+                    <li><a href="">Get in touch</a></li>
+                </ul>
+            </section>
+            <section id="footer-contact">
+                <h3>CONTACT</h3>
+                <p>Our Location</p>
+                <p>+23484830430</p>
+                <p>tracker@gmail.com</p>
+            </section>
+        </div>
+        <div id="footer-down" class="container">
+            <p>Copyright @ 2024 | Best Logistic Company | Developed by <span>Alphy Webdev</span></p>
+        </div>
+    </footer>
+</body>
+</html>                                                                                                                                                                             
