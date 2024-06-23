@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<main class="container home-image" style="background-image:url({% static "app/images/42.jpg" %})">
+    <div id="main-top">
+        <h2 class="home-title">INDUSTRY LEADING <br> LOGISTIC COMPANY</h2>
+        
+        <P class="home-paragraph">With us your package is safe <br>and we deliver on time just as promised.</P>
+        
+        <div>
+            <a href=""><button class="btn" id="btn1">Contact us</button></a>
+            <a href=""><button class="btn" id="btn2">Discover More</button></a>
+        </div>
+    </div>
+    
+</main>
+<main class="container">
+    <div class="main-middle">
+        <section class="info">
+            <i></i>
+            <div>
+                <h3>CALL CENTER</h3>
+            <p>Give us a call +23234344324</p>
+            </div>
+        </section>
+        <section class="info">
+            <h3>WORKING HOURS</h3>
+            <p>MON-SAT 7:30-5:00</p>
+        </section>
+        <section class="info">
+            <h3>OUR LOCATION</h3>
+            <p>23423 oxford street</p>
+        </section>
+        <section class="info">
+            <h3>GLOBAL CENTER</h3>
+            <p>head quaters in united kingdom</p>
+        </section>
+    </div>
+</main>
+{% endblock content %}

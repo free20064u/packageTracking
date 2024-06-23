@@ -1,0 +1,146 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block pageTitle %}Services{% endblock pageTitle %}
+{% block content %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+      <div class="container position-relative">
+        <h1>Services</h1>
+        <p>These are some of the services we provide to our happy customers.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li class="current">Services</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
+            <div>
+              <h4 class="title">Reliable</h4>
+              <p class="description">Trust that whatever you ask of us in terms of transportation will be provied</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
+            <div>
+              <h4 class="title">Security</h4>
+              <p class="description">You property with us is well secured and insured to ensure that you recieve your package in good shape.</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div>
+              <h4 class="title">Safety</h4>
+              <p class="description">Our staff ensure that your package are well packaged before departure from our warehouse.</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Our Services<br></span>
+        <h2>Our ServiceS</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-1.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3>Storage</h3>
+              <p>We have state of the art storage facility for storing the package given to us for delivery. We keep the packages under clean and secured condition to ensure that they are well protected. Our storage facility is well organized and clean for easy maintenance.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-2.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Logistics</a></h3>
+              <p>We have state of the art equipments and machinery that aid us in the movement of packages across the world.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-3.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Cargo</a></h3>
+              <p>We also have expectees in the movement of product across the seas. We provide the best cargo treatment and insurance before the departure of packages recieved.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-4.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Trucking</a></h3>
+              <p>We have heavy duty trucks that are used for the movement of products and packages from our warehouses to their destination across the world.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-5.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3>Packaging</h3>
+              <p>Our staff have been given the necessary equipments and skill that enables them package products that are recieved from clients in a state that ensures security and safety.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-6.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Warehousing</a></h3>
+              <p>We have ultra modern warhouse facility that is used for keeping of packages that have been recieved watiting for departure.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+
+  {% endblock content %}

@@ -1,0 +1,141 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+      <div class="container position-relative">
+        <h1>Tracking</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li class="current">Tracking</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+        <div class="container">
+          <div class="row gy-4 d-flex justify-content-between">
+            <div class=" order-2 order-lg-1 d-flex flex-column justify-content-center" style="text-align:center;border:1px solid #212529;padding:2rem;border-radius: 5px;">
+              <h2>Package Details.</h3>
+              <h1 class="sitename">Logis</h1>
+              <p>barcode image</p>
+              <p>{{ packageInfo.carrierReferenceNo }}</p>
+              <div class="d-flex">
+                <section class="col-md-6">
+                    <h2>Shippers information</h2>
+                    <p>{{ packageInfo.shippersFullname }}</p>
+                    <p>{{ packageInfo.shippersAddress }}</p>
+                    <p>{{ packageInfo.shippersPhone }}</p>
+                    <p>{{ packageInfo.shippersEmail }}</p>
+                </section>
+                <section class="col-md-6">
+                    <h2>Reciever information</h2>
+                    <p>{{ packageInfo.recieversFullname }}</p>
+                    <p>{{ packageInfo.recieversAddress }}</p>
+                    <p>{{ packageInfo.recieversPhone }}</p>
+                    <p>{{ packageInfo.recieversEmail }}</p>
+                </section>
+              </div>
+              <h2 style="background-color: var(--nav-dropdown-color);padding:0.5rem 0;color:#ffffff;">SHIPMENT STATUS IN TRANSIT</h2>
+              <div class="row" style="text-align: left">
+                <section class="col-md-4" >
+                  <h3>Date Recieved:</h3>
+                  <p>{{ packageInfo.receivedDate }}</p>
+              </section>
+                <section class="col-md-4" >
+                    <h3>Origin:</h3>
+                    <p>{{ packageInfo.origin }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Batch:</h3>
+                    <p>{{ packageInfo.batch }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>status:</h3>
+                    <p> {{ packageInfo.status }} </p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Desination:</h3>
+                    <p>{{ packageInfo.destination }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Currier:</h3>
+                    <p>{{ packageInfo.carrier }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Type of shipment</h3>
+                    <p>{{ packageInfo.typeOfShipment }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Weight:</h3>
+                    <p>{{ packageInfo.weight }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Carrier reference no:</h3>
+                    <p>{{ packageInfo.carrierReferenceNo }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Product:</h3>
+                    <p>{{ packageInfo.product }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Quantity:</h3>
+                    <p>{{ packageInfo.quantity }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Payment method:</h3>
+                    <p>{{ packageInfo.paymentMethod }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Expected Delivey Date:</h3>
+                    <p>{{ packageInfo.expectedDeliveryDate }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Departure time:</h3>
+                    <p>{{ packageInfo.departureTime }}</p>
+                </section>
+                <section class="col-md-4">
+                    <h3>Pick up Date:</h3>
+                    <p>{{ packageInfo.pickUpDate }}</p>
+                </section>
+              </div>
+              <div>
+                <h2>Shipment History</h2>  
+                <div class="row" style="font-size:1.5rem;">
+                        <p class="col-md-3">Date</p>
+                        <p class="col-md-3">Time</p>
+                        <p class="col-md-3">Location</p>
+                        <p class="col-md-3">updated by</p>
+                    {% if packageHistory == None %}
+                        <p class="col-md-3"> {{ packageInfo.receivedDate }} </p>
+                        <p class="col-md-3"> {{ packageInfo.departureTime }} </p>
+                        <p class="col-md-3"> {{ packageInfo.origin }} </p>
+                        <p class="col-md-3">admin</p>
+                    {% else %}
+                      {% for package in packageHistory %}
+                        <p class="col-md-3">{{ package.date }} </p>
+                        <p class="col-md-3">{{ package.time }}</p>
+                        <p class="col-md-3">{{ package.location }}</p>
+                        <p class="col-md-3">{{ package.updatedBy }}</p>
+                      {% endfor %}     
+                    {% endif %}
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section><!-- /Pricing Section -->
+
+  </main>
+
+{% endblock content %}

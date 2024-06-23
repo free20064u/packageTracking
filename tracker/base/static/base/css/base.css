@@ -21,6 +21,9 @@
     padding: 0 5rem;
 }
 
+.color-orange {
+    color: var(--orange);
+}
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -60,8 +63,10 @@ main-top {
 .home-image {
     padding-top: 8rem;
     padding-bottom: 12rem;
-    background-color: aqua;
+    background-color: rgb(121, 167, 167);
     height: max-content;
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
 .home-title {
@@ -87,6 +92,15 @@ main-top {
     margin-left: 1rem;
 }
 
+.main-middle {
+    color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
 footer {
     background-color: var(--gray);
 }
@@ -108,6 +122,14 @@ footer {
     padding: 1rem 5rem;
 }
 
+.footer-list-item {
+    color: var(--orange);
+    padding-top: .5rem;
+}
+
+.footer-list-item a {
+    color: var(--white);
+}
 #footer-down span{
     color: var(--orange);
 }

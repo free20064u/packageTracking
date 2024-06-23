@@ -1,16 +1,224 @@
 {% extends "base/base.html" %}
 {% load static %}
+
+{% block pageTitle %}Home{% endblock pageTitle %}
+
 {% block content %}
-<main class="container home-image" style="background-image:url({% static "app/images/image1.png" %})">
-    <div id="main-top">
-        <h2 class="home-title">INDUSTRY LEADING <br> LOGISTIC COMPANY</h2>
-        
-        <P class="home-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, iste.</P>
-        
-        <div>
-            <a href=""><button class="btn" id="btn1">Contact us</button></a>
-            <a href=""><button class="btn" id="btn2">Discover More</button></a>
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <img src="{% static "app/images/12.jpg" %}" alt="" class="hero-bg" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2 data-aos="fade-up" style="text-shadow:2px 2px 4px gray">Your Lightning Fast Delivery Partner</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="padding-bottom:5rem;">We always fulfill our promise by ensuring safe delivery of package on time and safely.</p>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="{% static "base/assets/img/hero-im" %}" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
         </div>
-    </div>
-</main>
-{% endblock content %}
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static "base/assets/img/about.jpg" %}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
+            <h3>About Us</h3>
+            <p>
+              Our company is mainly into the transportation of package from one point to another accross the world. We provide wide range of services to our client ranging from packaging through to warehousing to transportation of packages.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-diagram-3"></i>
+                <div>
+                  <h5>Reliable</h5>
+                  <p>Trust that whatever you ask of us in terms of transportation will be provied</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-fullscreen-exit"></i>
+                <div>
+                  <h5>Security</h5>
+                  <p>You property with us is well secured and insured to ensure that you recieve your package in good shape.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-broadcast"></i>
+                <div>
+                  <h5>Safety</h5>
+                  <p>Our staff ensure that your package are well packaged before departure from our warehouse.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Our Services<br></span>
+        <h2>Our ServiceS</h2>
+        <p>These are some of the services that we provide to our clients.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-1.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3>Storage</h3>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-2.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Logistics</a></h3>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-3.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Cargo</a></h3>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-4.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Trucking</a></h3>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-5.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3>Packaging</h3>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static "base/assets/img/service-6.jpg" %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Warehousing</a></h3>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Frequently Asked Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How does a package take to reach it destination?</h3>
+                <div class="faq-content">
+                  <p>It depends on the distane the package will have to travel before reaching it destination. if the distiance is short it takes at least a month but if it quite long it might take two weeks</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>What will happen if a package is lost in the process of transport it to the owner?</h3>
+                <div class="faq-content">
+                  <p>Because all our products are insured, if it get missing it will be replace by the company to ensure that the owner of the package recievs her package.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>What are some of the products you transport?</h3>
+                <div class="faq-content">
+                  <p>We transport everything accross the world as long as it is ligal.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How much does it cost to transport a package?</h3>
+                <div class="faq-content">
+                  <p>The cost involve in transportation of a package is dependent on the distance the package witll have to travel and the mass of the package.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+  </main>
+
+  {% endblock content %}
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block pageTitle %}Tracking{% endblock pageTitle %}
+{% block content %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+      <div class="container position-relative">
+        <h1>Tracking</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li class="current">Tracking</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+        <div class="container">
+          <div class="row gy-4 d-flex justify-content-between">
+            <div class=" order-2 order-lg-1 d-flex flex-column justify-content-center" style="text-align:center;border:1px solid #212529;border-radius: 5px;">
+              <h3>Enter the package No.</h3>
+              <form action="" method="post" class="form-search d-flex  mb-3" data-aos="fade-up" data-aos-delay="200" style="width: 50%;margin:auto;">
+                {% csrf_token %}
+                <input type="text" class="form-control" placeholder="Enter tracking code" name="trackingCode">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    </section><!-- /Pricing Section -->
+
+  </main>
+
+  {% endblock content %}
+
+  

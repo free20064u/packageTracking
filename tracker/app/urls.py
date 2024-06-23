@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import homeView
+from . import views
 
 urlpatterns = [
-    path('', homeView),
+    path('', views.homeView, name='home'),
+    path('about/', views.aboutView, name='about'),
+    path('services/', views.servicesView, name='services'),
+    path('tracking/', views.trackingView, name='tracking'),
+    path('contact/', views.contactView, name='contact'),
+    path('getaquote/', views.getaquoteView, name='getaquote'),
 ]
