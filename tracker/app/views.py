@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import shipmentStatus, shipmentHistory
 
 # Create your views here.
@@ -17,7 +17,10 @@ def servicesView(request):
 def trackingView(request):
     if request.method == "POST":
         code = (request.POST.get('trackingCode'))
-        packageInfo = shipmentStatus.objects.get(carrierReferenceNo = code)
+        try:
+            packageInfo = shipmentStatus.objects.get(carrierReferenceNo = code)
+        except:
+            return redirect('tracking')
         try:
             packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code)
             print(packageHistory)
