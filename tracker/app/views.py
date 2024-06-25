@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import shipmentStatus, shipmentHistory
+from .forms import shipmentStatusForm, updatePackageForm
 
 # Create your views here.
 def homeView(request):
@@ -23,7 +24,6 @@ def trackingView(request):
             return redirect('tracking')
         try:
             packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code)
-            print(packageHistory)
         except:
             packageHistory=None
             
@@ -40,3 +40,32 @@ def contactView(request):
 
 def getaquoteView(request):
     return render(request, 'app/get-a-quote.html')
+
+
+def dashboardView(request):
+    return render(request, 'app/dashboard.html')
+
+def addPackageView(request):
+    if request.method == "POST":
+        form = shipmentStatusForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('addPackage')
+        else:
+            return render(request, 'app/addPackage.html', {'form':form})
+    else:
+        form = shipmentStatusForm()
+        return render(request, 'app/addPackage.html', {'form': form})
+    
+
+def updatePackageView(request):
+    if request.method == "POST":
+        form = updatePackageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('updatePackage')
+        else:
+            return render(request, 'app/updatePackage.html', {'form':form})
+    else:
+        form = updatePackageForm()
+        return render(request, 'app/updatePackage.html', {'form':form})

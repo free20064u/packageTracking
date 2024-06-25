@@ -1,0 +1,61 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block pageTitle %}Dashboard{% endblock pageTitle %}
+{% block content %}
+
+  <main class="main">
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+        <div class="container position-relative">
+          <h1>Update Package Details</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url "home" %}">Home</a></li>
+              <li class="current">Add Package</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+
+    <div class="container my-4" >
+        <h3 class="text-center pb-2">Update Package Details</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.carrierReferenceNo.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.carrierReferenceNo }}
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.location.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.location }}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <div class="text-center m-4">
+                <button class="btn btn-primary col-4 text-center">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+   
+  </main>
+
+  {% endblock content %}

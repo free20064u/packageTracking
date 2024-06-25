@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block pageTitle %}Home{% endblock pageTitle %}
+
+{% block content %}
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+        <div class="container position-relative">
+          <h1>Sign Up</h1>
+          <p>Register to become a member</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url "home" %}">Home</a></li>
+              <li class="current">Sign Up</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+
+      <section id="pricing" class="pricing section">
+
+        <div class="container">
+          <div class="row gy-4 d-flex justify-content-between">
+            <div class=" order-2 order-lg-1 " style="text-align:center;border:1px solid #212529;border-radius: 5px;">
+              <h3 class="mt-3">Enter your information</h3>
+              <form action="" method="post" class="form-search  mb-3 col-lg-8 col-md-8 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="margin:auto;">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-primary mt-4 col-6">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    </section><!-- /Pricing Section -->
+
+  
+  </main>
+
+  {% endblock content %}
+
+</body>
+
+</html>

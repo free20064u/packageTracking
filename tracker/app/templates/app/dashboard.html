@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block pageTitle %}Dashboard{% endblock pageTitle %}
+{% block content %}
+
+  <main class="main">
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+        <div class="container position-relative">
+          <h1>Dashboard</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url "home" %}">Home</a></li>
+              <li class="current">Dashboard</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+
+    <div class="container my-4" >
+        <div class="row">
+            <div class="col-12 col-sm-6 my-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Package Details</h5>
+                        <p class="card-text">Click to enter new package details.</p>
+                        <a href=" {% url "addPackage" %} " class="btn btn-primary">Enter Details</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-12 col-sm-6 my-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Location history</h5>
+                        <p class="card-text">Click to enter new package details.</p>
+                        <a href="{% url "updatePackage" %}" class="btn btn-primary">Update location</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+  </main>
+
+  {% endblock content %}
+
+  

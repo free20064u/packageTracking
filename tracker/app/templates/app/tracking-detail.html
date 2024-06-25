@@ -23,20 +23,20 @@
 
         <div class="container">
           <div class="row gy-4 d-flex justify-content-between">
-            <div class=" order-2 order-lg-1 d-flex flex-column justify-content-center" style="text-align:center;border:1px solid #212529;padding:2rem;border-radius: 5px;">
+            <div class=" order-2 order-lg-1 d-flex flex-column justify-content-center" style="text-align:center;border:1px solid #212529;border-radius: 5px;">
               <h2>Package Details.</h3>
               <h1 class="sitename">Logis</h1>
               <p>barcode image</p>
               <p>{{ packageInfo.carrierReferenceNo }}</p>
-              <div class="d-flex">
-                <section class="col-md-6">
+              <div class="row d-flex">
+                <section class="col-12 col-sm-6 py-2">
                     <h2>Shippers information</h2>
                     <p>{{ packageInfo.shippersFullname }}</p>
                     <p>{{ packageInfo.shippersAddress }}</p>
                     <p>{{ packageInfo.shippersPhone }}</p>
                     <p>{{ packageInfo.shippersEmail }}</p>
                 </section>
-                <section class="col-md-6">
+                <section class="col-12 col-sm-6 py-2">
                     <h2>Reciever information</h2>
                     <p>{{ packageInfo.recieversFullname }}</p>
                     <p>{{ packageInfo.recieversAddress }}</p>
@@ -45,86 +45,84 @@
                 </section>
               </div>
               <h2 style="background-color: var(--nav-dropdown-color);padding:0.5rem 0;color:#ffffff;">SHIPMENT STATUS IN TRANSIT</h2>
-              <div class="row" style="text-align: left">
-                <section class="col-md-4" >
-                  <h3>Date Recieved:</h3>
+
+              <div class="row d-flex container" style="text-align: left">
+                <section class="col-6 col-sm-4 p-2" >
+                  <h3 class="mb-1">Date Recieved:</h3>
                   <p>{{ packageInfo.receivedDate }}</p>
-              </section>
-                <section class="col-md-4" >
-                    <h3>Origin:</h3>
+                </section>
+                <section class="col-6 col-sm-4 p-2" >
+                    <h3 class="mb-1">Origin:</h3>
                     <p>{{ packageInfo.origin }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Batch:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Batch:</h3>
                     <p>{{ packageInfo.batch }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>status:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">status:</h3>
                     <p> {{ packageInfo.status }} </p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Desination:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Desination:</h3>
                     <p>{{ packageInfo.destination }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Currier:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Currier:</h3>
                     <p>{{ packageInfo.carrier }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Type of shipment</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Type of shipment</h3>
                     <p>{{ packageInfo.typeOfShipment }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Weight:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Weight:</h3>
                     <p>{{ packageInfo.weight }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Carrier reference no:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Carrier reference no:</h3>
                     <p>{{ packageInfo.carrierReferenceNo }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Product:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Product:</h3>
                     <p>{{ packageInfo.product }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Quantity:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Quantity:</h3>
                     <p>{{ packageInfo.quantity }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Payment method:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Payment method:</h3>
                     <p>{{ packageInfo.paymentMethod }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Expected Delivey Date:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Expected Delivey Date:</h3>
                     <p>{{ packageInfo.expectedDeliveryDate }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Departure time:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Departure time:</h3>
                     <p>{{ packageInfo.departureTime }}</p>
                 </section>
-                <section class="col-md-4">
-                    <h3>Pick up Date:</h3>
+                <section class="col-6 col-sm-4 p-2">
+                    <h3 class="mb-1">Pick up Date:</h3>
                     <p>{{ packageInfo.pickUpDate }}</p>
                 </section>
               </div>
               <div>
-                <h2>Shipment History</h2>  
+                <h2 style="background-color: var(--nav-dropdown-color);padding:0.5rem 0;color:#ffffff;">Location History</h2>  
                 <div class="row" style="font-size:1.5rem;">
-                        <p class="col-md-3">Date</p>
-                        <p class="col-md-3">Time</p>
-                        <p class="col-md-3">Location</p>
-                        <p class="col-md-3">updated by</p>
+                        <h3 class="col-4">Date</h3>
+                        <h3 class="col-4">Time</h3>
+                        <h3 class="col-4">Location</h3>
                     {% if packageHistory == None %}
-                        <p class="col-md-3"> {{ packageInfo.receivedDate }} </p>
-                        <p class="col-md-3"> {{ packageInfo.departureTime }} </p>
-                        <p class="col-md-3"> {{ packageInfo.origin }} </p>
-                        <p class="col-md-3">admin</p>
+                        <p class="col-4 h6"> {{ packageInfo.receivedDate }} </p>
+                        <p class="col-4 h6"> {{ packageInfo.departureTime }} </p>
+                        <p class="col-4 h6"> {{ packageInfo.origin }} </p>
                     {% else %}
                       {% for package in packageHistory %}
-                        <p class="col-md-3">{{ package.date }} </p>
-                        <p class="col-md-3">{{ package.time }}</p>
-                        <p class="col-md-3">{{ package.location }}</p>
-                        <p class="col-md-3">{{ package.updatedBy }}</p>
+                        <p class="col-4 h6">{{ package.date }} </p>
+                        <p class="col-4 h6">{{ package.time }}</p>
+                        <p class="col-4 h6">{{ package.location }}</p>
                       {% endfor %}     
                     {% endif %}
         

@@ -47,8 +47,17 @@
                 <li><a href="{% url "home" %}" class="active">Home<br></a></li>
                 <li><a href="{% url "services" %}">Services</a></li>
                 <li><a href="{% url "tracking" %}">Tracking</a></li>
-                
                 <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if user.is_authenticated %}
+                  {% if user.is_superuser %}
+                  <li><a href=" {% url "dashboard" %} ">Admin</a></li>
+                  {% endif %}
+                <li><a href="{% url "signOut" %}">Sign Out</a></li>
+                {% else %}
+                  <li><a href="{% url "signIn" %}">Sign In</a></li>
+                  <li><a href="{% url "register" %}">Sign Up</a></li>
+                {% endif %}
+                
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

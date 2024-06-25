@@ -1,0 +1,211 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+{% block pageTitle %}Dashboard{% endblock pageTitle %}
+{% block content %}
+
+  <main class="main">
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
+        <div class="container position-relative">
+          <h1>Add Package</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url "home" %}">Home</a></li>
+              <li class="current">Add Package</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+
+    <div class="container my-4" >
+        <h3 class="text-center pb-2">Package Details</h3>
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.shippersFullname.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.shippersFullname }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.shippersAddress.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.shippersAddress }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.shippersPhone.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.shippersPhone }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.shippersEmail.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.shippersEmail }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.origin.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.origin }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.destination.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.destination }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.batch.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.batch }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.status.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.status }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.carrier.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.carrier }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.carrierReferenceNo.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.carrierReferenceNo }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.typeOfShipment.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.typeOfShipment }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.recieversFullname.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.recieversFullname }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.recieversAddress.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.recieversAddress }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.recieversPhone.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.recieversPhone }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.recieversEmail.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.recieversEmail }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.product.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.product }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.quantity.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.quantity }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.weight.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.weight }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.expectedDeliveryDate.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.expectedDeliveryDate }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.pickUpDate.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.pickUpDate }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 pt-1">
+                            {{ form.paymentMethod.label_tag }}
+                        </div>
+                        <div class="col-8 pt-1">
+                            {{ form.paymentMethod }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="text-center ms-4">
+                <button class="btn btn-primary col-4 text-center">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+   
+  </main>
+
+  {% endblock content %}
+
+  
