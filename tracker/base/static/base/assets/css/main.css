@@ -48,6 +48,28 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
+.success {
+  text-align: center;
+  color: #06694c;
+  background-color: #67a37e;
+  list-style-type: none;
+  padding: .6rem;
+}
+
+.error {
+  text-align: center;
+  color: #df1529;
+  background-color: #f09aa2;
+  list-style-type: none;
+  padding: .6rem;
+}
+
+.messages {
+  padding: 0px;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);

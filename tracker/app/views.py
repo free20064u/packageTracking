@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib import messages
 from .models import shipmentStatus, shipmentHistory
 from .forms import shipmentStatusForm, updatePackageForm
 
@@ -20,7 +21,9 @@ def trackingView(request):
         code = (request.POST.get('trackingCode'))
         try:
             packageInfo = shipmentStatus.objects.get(carrierReferenceNo = code)
+            messages.success(request, "Package retrieved successfully")
         except:
+            messages.error(request, "No package found.")
             return redirect('tracking')
         try:
             packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code)
@@ -45,13 +48,16 @@ def getaquoteView(request):
 def dashboardView(request):
     return render(request, 'app/dashboard.html')
 
+
 def addPackageView(request):
     if request.method == "POST":
         form = shipmentStatusForm(request.POST)
         if form.is_valid:
             form.save()
+            messages.success(request, 'Package added successfully')
             return redirect('addPackage')
         else:
+            messages.error(request, 'Package not added')
             return render(request, 'app/addPackage.html', {'form':form})
     else:
         form = shipmentStatusForm()
@@ -63,8 +69,10 @@ def updatePackageView(request):
         form = updatePackageForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Package updated successfully')
             return redirect('updatePackage')
         else:
+            messages.error(request, 'Package not updated')
             return render(request, 'app/updatePackage.html', {'form':form})
     else:
         form = updatePackageForm()
