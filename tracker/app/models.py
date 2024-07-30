@@ -25,8 +25,7 @@ class shipmentStatus(models.Model):
     product = models.CharField(max_length=100)
     quantity = models.CharField(max_length=100)
     paymentMethod = models.CharField(max_length=100)
-    expectedDeliveryDate = models.CharField(max_length=100)
-    departureTime = models.CharField(max_length=100)
+    expectedDeliveryDate = models.DateField()
     pickUpDate = models.DateField()
 
     def createCarrieReferenceNo(self):
