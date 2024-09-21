@@ -15,7 +15,7 @@ class shipmentStatus(models.Model):
 
     receivedDate = models.DateField(auto_now_add=True)
     origin = models.CharField(max_length=100)
-    batch = models.CharField(max_length=5)
+    batch = models.CharField(max_length=50)
     status = models.CharField(max_length=100)
     destination = models.CharField(max_length=100)
     carrier = models.CharField(max_length=100)
