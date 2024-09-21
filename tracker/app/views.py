@@ -53,7 +53,6 @@ def addPackageView(request):
     if request.method == "POST":
         form = shipmentStatusForm(request.POST)
         if form.is_valid:
-            print(form)
             form.save()
             messages.success(request, 'Package added successfully')
             return redirect('addPackage')
