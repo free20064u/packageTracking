@@ -1,20 +1,9 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import shipmentStatus, shipmentHistory
 from .forms import shipmentStatusForm, updatePackageForm
 
-from git import Repo
-from django.views.decorators.csrf import csrf_exempt
-
 # Create your views here.
-@csrf_exempt
-def updateWebsiteView(request):
-    repo = Repo('/home/packageTracker/packageTracking')
-    repo.remotes.origin.pull()
-    return HttpResponse('pulled_success')
-
-
 def homeView(request):
     return render(request, 'app/index.html')
 

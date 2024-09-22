@@ -27,7 +27,6 @@ urlpatterns = [
     path('getaquote/', views.getaquoteView, name='getaquote'),
     path('dashboard/', views.dashboardView, name='dashboard'),
     path('dashboard/addPackage/', views.addPackageView, name='addPackage'),
-    path('dashboard/updatePackage/', views.updatePackageView, name='updatePackage'),
-    path('updateWebsite/', views.updateWebsiteView, name='updateWebsite'),
+    path('dashboard/updatePackage/', views.updatePackageView, name='updatePackage')
     
 ]
