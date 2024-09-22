@@ -1,0 +1,23 @@
+name: Update Website
+on:
+  push:
+    branches:
+      - main
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP request
+        id: request
+        uses: tyrrrz/action-http-request@master
+        with:
+          url: 'https://utilitydistribution.pythonanywhere.com/update/'
+          method: POST
+          headers: |
+            Content-Type: application/json
+          body: |
+            {
+              "foo": "bar"
+            }
+          retry-count: 3
+          retry-delay: 500
