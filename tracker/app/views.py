@@ -41,7 +41,7 @@ def trackingView(request):
             messages.error(request, "No package found.")
             return redirect('tracking')
         try:
-            packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code).order_by('-date','-time')
+            packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code)
         except:
             packageHistory=None
             
