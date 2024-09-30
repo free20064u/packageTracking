@@ -21,23 +21,23 @@ class shipmentStatusForm(forms.ModelForm):
     batch = forms.CharField(label='batch', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
     status = forms.CharField(label='status', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
     destination = forms.CharField(label='destination', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    carrier = forms.CharField(label='carrier', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    typeOfSipment = forms.CharField(label='typeOfSipment', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    weight = forms.CharField(label='weight', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    carrierReferenceNo = forms.CharField(label='carrierReferenceNo', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    product = forms.CharField(label='product', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    paymentMethod = forms.CharField(label='paymentMethod', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
-    quantity = forms.CharField(label='quantity', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # carrier = forms.CharField(label='carrier', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # typeOfSipment = forms.CharField(label='typeOfSipment', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # weight = forms.CharField(label='weight', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # carrierReferenceNo = forms.CharField(label='carrierReferenceNo', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # product = forms.CharField(label='product', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # paymentMethod = forms.CharField(label='paymentMethod', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    # quantity = forms.CharField(label='quantity', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
     expectedDeliveryDate = forms.CharField(label='expectedDeliveryDate', max_length=100, widget= forms.DateInput(attrs={'class': 'form-control','type':'date'}))
     pickUpDate = forms.CharField(label='pickUpDate', max_length=100, widget= forms.DateInput(attrs={'class': 'form-control', 'type':'date'}))
-    #barcode = forms.ImageField(label='barcode', max_length=100, widget= forms.FileInput(attrs={'class': 'form-control'}))
-    typeOfShipment = forms.CharField(label='type of shipment', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    
 
 
 
     class Meta:
         model = shipmentStatus
-        fields = ['shippersFullname', 'shippersAddress', 'shippersPhone', 'shippersEmail', 'recieversFullname', 'recieversAddress', 'recieversPhone', 'recieversEmail', 'pickUpDate','expectedDeliveryDate','origin', 'batch', 'status', 'destination', 'carrierReferenceNo', 'product', 'quantity', 'paymentMethod','carrier', 'typeOfShipment', 'weight'   
+        fields = ['shippersFullname', 'shippersAddress', 'shippersPhone', 'shippersEmail', 'recieversFullname', 'recieversAddress', 'recieversPhone', 'recieversEmail', 'pickUpDate','expectedDeliveryDate','origin', 'batch', 'status', 'destination', 'carrierReferenceNo', 'product', 'quantity', 'paymentMethod','carrier', 'typeOfShipment', 'weight'
+        #    
         ]
 
 

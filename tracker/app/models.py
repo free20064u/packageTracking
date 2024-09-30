@@ -1,8 +1,6 @@
 from time import timezone
 from django.db import models
 
-
-
 # Create your models here.
 class shipmentStatus(models.Model):
     shippersFullname = models.CharField(max_length=200)
@@ -29,7 +27,6 @@ class shipmentStatus(models.Model):
     paymentMethod = models.CharField(max_length=100)
     expectedDeliveryDate = models.DateField()
     pickUpDate = models.DateField()
-    barcode = models.ImageField(upload_to='images/', blank=True, null=True)
 
     def createCarrieReferenceNo(self):
         self.carrierReferenceNo = "wewe23123241fefef"
@@ -45,7 +42,6 @@ class shipmentStatus(models.Model):
 
     def __str__(self):
         return self.product
- 
 
 
 

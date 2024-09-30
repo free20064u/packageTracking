@@ -7,9 +7,6 @@ from django.http import HttpResponse
 from git import Repo
 from django.views.decorators.csrf import csrf_exempt
 
-from barcode import Code39
-from barcode.writer import SVGWriter
-
 # Create your views here.
 
 @csrf_exempt
@@ -67,21 +64,7 @@ def dashboardView(request):
 def addPackageView(request):
     if request.method == "POST":
         form = shipmentStatusForm(request.POST)
-        from io import BytesIO
-
-        from barcode import EAN13
-        from barcode.writer import SVGWriter
-
-        # Write to a file-like object:
-        rv = BytesIO()
-        EAN13("100000902922", writer=SVGWriter()).write(rv)
-
-        #Or to an actual file:
-        with open("media/somefile.svg", "x") as f:
-            EAN13(str(100000011111), writer=SVGWriter()).write(f)
-
-        if form.is_valid():
-                       
+        if form.is_valid:
             form.save()
             messages.success(request, 'Package added successfully')
             return redirect('addPackage')
