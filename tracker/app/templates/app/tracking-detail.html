@@ -113,7 +113,7 @@
               </div>
               <div>
                 <h2 style="background-color: var(--nav-dropdown-color);padding:0.5rem 0;color:#ffffff;">Location History</h2>  
-                <div class="row" style="font-size:1.5rem;">
+                <!--<div class="row" style="font-size:1.5rem;">
                         <h3 class="col-4">Date</h3>
                         <h3 class="col-4">Time</h3>
                         <h3 class="col-4">Location</h3>
@@ -128,12 +128,48 @@
                         <p class="col-4 h6">{{ package.location }}</p>
                       {% endfor %}     
                     {% endif %}
+                </div>-->
+
+                {{packageHistoryValues|json_script:"stations"}}
+                {{latlngs|json_script:"latlngs"}}
+                {{currenLocation|json_script:"currenLocation"}}
+                <div id="map" style="height:400px"></div>
+
+                <script>
+      
+                  var map = L.map('map').setView([7.9465, -1.0232], 6);
+                  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
+
+                    L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',{
+                      maxZoom: 20,
+                      subdomains:['mt0','mt1','mt2','mt3']
+                  });
+                  
+                  var locations = JSON.parse(document.getElementById('stations').textContent);
+                  var latlgns = JSON.parse(document.getElementById('latlngs').textContent);
+                  var currenLocation = JSON.parse(document.getElementById('currenLocation').textContent);
+
+                  locations.forEach(location => {
+                    if (location.currentLocation){
+                      L.circleMarker([location.latitude, location.longitude], {color:'red', fillColor: '#00f', fillOpacity:0.9, radius:7}).addTo(map);
+                    }else{
+                      L.circleMarker([location.latitude, location.longitude], {color:'blue',fillColor: '#00f', fillOpacity:0.9, radius:5}).addTo(map);
+                    }
+                    
+                  });
+                    L.polyline(latlgns, {color: 'blue', dashArray: '5, 5'}).addTo(map)
         
-                </div>
+
+                
+                </script>
               </div>
             </div>
           </div>
         </div>
+        
 
     </section><!-- /Pricing Section -->
 

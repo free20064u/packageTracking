@@ -28,5 +28,7 @@ urlpatterns = [
     path('dashboard/', views.dashboardView, name='dashboard'),
     path('dashboard/addPackage/', views.addPackageView, name='addPackage'),
     path('dashboard/updatePackage/', views.updatePackageView, name='updatePackage'),
+    path('update-current-location/', views.updateCurrentLocationView, name='update-current-location'),
+    path('update-current-location-change/<int:id>/', views.updateCurrentLocationChangeView, name='update-current-location-change'),
     path('updateWebsite/', views.updateWebsiteView, name='updateWebsite'), 
 ]

@@ -131,7 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #Liverload settings
-LIVERELOAD_HOST = '192.168.43.180'
+LIVERELOAD_HOST = '169.254.166.162'
 LIVERELOAD_PORT = '8001'
 
 

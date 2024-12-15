@@ -8,11 +8,11 @@
   <main class="main">
     <div class="page-title" data-aos="fade" style="background-image: url({% static "base/assets/img/page-title-bg.jpg" %});">
         <div class="container position-relative">
-          <h1>Dashboard</h1>
+          <h1>Package Locations</h1>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="{% url "home" %}">Home</a></li>
-              <li class="current">Dashboard</li>
+              <li class="current">Package locations</li>
             </ol>
           </nav>
         </div>
@@ -23,31 +23,22 @@
     <div class="container my-4" >
       <div class="row text-primary fs-6 mb-3">
         <div class="col-2">Reference No</div>
-        <div class="col-2">Sender</div>
-        <div class="col-2">Reciever</div>
-        <div class="col-1">Product</div>
-        <div class="col-1">Quantity</div>
-        <div class="col-2">Update Location</div>
-        <div class="col-2">Update currenLocation</div>
+        <div class="col-2">Location</div>
+        <div class="col-2">Current location</div>
+        <div class="col-2">Set Current location</div>
       </div>
-
-        {% for package in packages  %}
+        {% for package in packageLocations  %}
         <div class="row">
           <div class="col-2">{{package.carrierReferenceNo}}</div>
-          <div class="col-2">{{package.shippersFullname}}</div>
-          <div class="col-2">{{package.recieversFullname}} </div>
-          <div class="col-1">{{package.product}}</div>
-          <div class="col-1">{{package.quantity}}</div>
+          <div class="col-2">{{package.location}} </div>
+          <div class="col-2">{{package.currentLocation}}</div>
           <div class="col-2">
-            <a class="btn bg-primary text-white text-center" href="{% url "updatePackage" %}">upd.. loc..</a>
-          </div>
-        <div class="col-2">
-          <form action="{% url "update-current-location" %}" method="post">
+            <form action="{% url "update-current-location-change" package.id %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="referenceId" value="{{package.carrierReferenceNo}}">
-            <button class="btn bg-primary text-white text-center">upd.. cur.. Loc..</button>
-          </form>
-        </div>
+            <button class="btn bg-primary text-white text-center mb-1">set current location</button>
+            </form>
+            </div>
         </div>
         {% endfor %}
     </div>

@@ -45,7 +45,9 @@ class updatePackageForm(forms.ModelForm):
 
     carrierReferenceNo = forms.CharField(label='Carrier Reference No', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
     location = forms.CharField(label='Location', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    latitude = forms.CharField(label='Latitude', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
+    longitude = forms.CharField(label='Longitude', max_length=100, widget= forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = shipmentHistory
-        fields = ['carrierReferenceNo', 'location']
+        fields = ['carrierReferenceNo', 'location','latitude', 'longitude']

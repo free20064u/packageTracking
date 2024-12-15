@@ -41,7 +41,7 @@ class shipmentStatus(models.Model):
 
 
     def __str__(self):
-        return self.product
+        return (f'{self.carrierReferenceNo} -- {self.product}')
 
 
 
@@ -51,6 +51,9 @@ class shipmentHistory(models.Model):
     location = models.CharField(max_length=100)
     updatedBy = models.CharField(max_length=100, default="admin")
     carrierReferenceNo = models.CharField(max_length=100,default='')
+    longitude = models.CharField(max_length=50, null=True, blank=True)
+    latitude = models.CharField(max_length=50, null=True, blank=True)
+    currentLocation = models.BooleanField(default=False, blank=True, null=True)
 
    
 

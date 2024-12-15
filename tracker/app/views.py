@@ -39,12 +39,24 @@ def trackingView(request):
             return redirect('tracking')
         try:
             packageHistory = shipmentHistory.objects.filter(carrierReferenceNo = code).order_by('-date','-time')
+            #print(list(packageHistory.values_list('latitude','longitude')))
         except:
             packageHistory=None
-            
-        
+        latlngs=[]
+        for latlng in list(packageHistory.values_list('latitude','longitude')):
+            items=[]
+            for item in latlng:
+                items.append(float(item))
+            latlngs.append(items)
+   
+        context =  {
+            'packageInfo':packageInfo, 
+            'packageHistory': packageHistory,
+            'packageHistoryValues': list(packageHistory.values('location','latitude','longitude','currentLocation')),
+            'latlngs':latlngs,
+            }
 
-        return render(request, 'app/tracking-detail.html', {'packageInfo':packageInfo, 'packageHistory': packageHistory})
+        return render(request, 'app/tracking-detail.html',context)
     else:
         return render(request, 'app/tracking.html')
 
@@ -58,7 +70,38 @@ def getaquoteView(request):
 
 
 def dashboardView(request):
-    return render(request, 'app/dashboard.html')
+    packages = shipmentStatus.objects.all()
+    context = {
+        'packages':packages,
+    }
+    if request.method=='POST':
+        pass
+    else:
+        return render(request, 'app/dashboard.html', context)
+
+def updateCurrentLocationView(request):
+    if request.method == 'POST':
+        package_reference = request.POST['referenceId']
+        packageLocations = shipmentHistory.objects.filter(carrierReferenceNo=package_reference)
+        print(packageLocations)
+        context = {
+            'packageLocations': packageLocations,
+        }
+        return render(request, 'app/packageLocations.html', context)
+    
+def updateCurrentLocationChangeView(request, id=None):
+    if request.method == 'POST':
+        package_reference = request.POST['referenceId']
+        packageLocations = shipmentHistory.objects.filter(carrierReferenceNo=package_reference)
+        for package in packageLocations:
+            if package.id == id:
+                package.currentLocation = True
+                package.save()
+            else:
+                package.currentLocation = False
+                package.save()
+            print(package.id, id)
+        return redirect('dashboard')
 
 
 def addPackageView(request):
