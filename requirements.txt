@@ -4,10 +4,13 @@ Django==4.2.7
 django-crispy-forms==2.1
 django-livereload-server==0.4
 fontawesomefree==6.5.1
+gitdb==4.0.11
+GitPython==3.1.43
 Pillow==10.1.0
 python-barcode==0.15.1
 python-decouple==3.8
 six==1.16.0
+smmap==5.0.1
 soupsieve==2.5
 sqlparse==0.4.4
 tornado==6.3.3
